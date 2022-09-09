@@ -1,6 +1,6 @@
 class Room:
-    def __init__(self, name, capacity, genre, fee):
+    def __init__(self, name, capacity, style, fee):
         self.name = name
         self.capacity = capacity
-        self.genre = genre
+        self.style = style
         self.fee = fee
