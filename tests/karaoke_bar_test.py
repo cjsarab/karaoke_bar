@@ -3,6 +3,8 @@ from src.karaoke_bar import KaraokeBar
 from src.song import Song
 from src.room import Room
 
+from data.songs import song_list
+
 class TestKaraokeBar(unittest.TestCase):
 
     def setUp(self):
@@ -13,12 +15,12 @@ class TestKaraokeBar(unittest.TestCase):
         self.room5 = Room("The Integer of the Beast", 4, "Metal", False)
         self.room6 = Room("Johnny Crash", 6, "Country", False)
 
-        self.song1 = Song("Boyzone", "No Matter What", 1998)
-        self.song2 = Song("Ed Sheeran", "I See Fire", 2013)
-        self.song3 = Song("The Animals", "The House of the Rising Sun", 1964)
-        self.song4 = Song("Lou Reed", "Vicious", 1972)
-        self.song5 = Song("Iron Maiden", "The Number of the Beast", 1982)
-        self.song6 = Song("Johnny Cash", "A Boy Named Sue", 1969)
+        self.song1 = Song("Boyzone", "No Matter What")
+        self.song2 = Song("Ed Sheeran", "I See Fire")
+        self.song3 = Song("The Animals", "The House of the Rising Sun")
+        self.song4 = Song("Lou Reed", "Vicious")
+        self.song5 = Song("Iron Maiden", "The Number of the Beast")
+        self.song6 = Song("Johnny Cash", "A Boy Named Sue")
 
         self.rooms = []
         self.rooms.extend([self.room1, self.room2, self.room3, self.room4, self.room5, self.room6])
