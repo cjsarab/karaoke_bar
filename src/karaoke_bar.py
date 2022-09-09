@@ -4,5 +4,3 @@ class KaraokeBar:
         self.till = till
         self.songs = songs
         self.rooms = rooms
-
-    
