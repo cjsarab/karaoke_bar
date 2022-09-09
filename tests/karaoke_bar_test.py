@@ -56,6 +56,43 @@ class TestKaraokeBar(unittest.TestCase):
         self.assertEqual("The Integer of the Beast", self.karaoke_bar.rooms[4].name) 
 
     def test_karaoke_bar_room_six_johnny_crash(self):
-        self.assertEqual("Johnny Crash", self.karaoke_bar.rooms[5].name) 
+        self.assertEqual("Johnny Crash", self.karaoke_bar.rooms[5].name)
+
+    def test_karaoke_bar_song_one_no_matter_what(self):
+        self.assertEqual("No Matter What", self.karaoke_bar.songs[0].title)
+
+    def test_karaoke_bar_song_two_i_see_fire(self):
+        self.assertEqual("I See Fire", self.karaoke_bar.songs[1].title)
+
+    def test_karaoke_bar_song_three_house_of_rising_sun(self):
+        self.assertEqual("The House of the Rising Sun", self.karaoke_bar.songs[2].title)
+
+    def test_karaoke_bar_song_four_vicious(self):
+        self.assertEqual("Vicious", self.karaoke_bar.songs[3].title)
+
+    def test_karaoke_bar_song_five_number_of_the_beast(self):
+        self.assertEqual("The Number of the Beast", self.karaoke_bar.songs[4].title)
+
+    def test_karaoke_bar_song_six_a_boy_named_sue(self):
+        self.assertEqual("A Boy Named Sue", self.karaoke_bar.songs[5].title)
+
+    def test_room_one_fee_false(self):
+        self.assertEqual(False, self.karaoke_bar.rooms[0].fee)
+
+    def test_room_two_fee_true(self):
+        self.assertEqual(True, self.karaoke_bar.rooms[1].fee)
+
+    def test_room_three_fee_false(self):
+        self.assertEqual(False, self.karaoke_bar.rooms[2].fee)
+
+    def test_room_four_fee_true(self):
+        self.assertEqual(True, self.karaoke_bar.rooms[3].fee)
+
+    def test_room_five_fee_false(self):
+        self.assertEqual(False, self.karaoke_bar.rooms[4].fee)
+
+    def test_room_six_fee_false(self):
+        self.assertEqual(False, self.karaoke_bar.rooms[5].fee)
+
 
 
