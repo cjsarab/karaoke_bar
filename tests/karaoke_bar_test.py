@@ -1,7 +1,7 @@
 import unittest
 from src.karaoke_bar import KaraokeBar
-from src.song import Song
 from src.room import Room
+from src.songs import Song
 
 class TestKaraokeBar(unittest.TestCase):
 
@@ -13,12 +13,12 @@ class TestKaraokeBar(unittest.TestCase):
         self.room5 = Room("The Integer of the Beast", 4, "Metal", False)
         self.room6 = Room("Johnny Crash", 6, "Country", False)
 
-        self.song1 = Song("Boyzone", "No Matter What")
-        self.song2 = Song("Ed Sheeran", "I See Fire")
-        self.song3 = Song("The Animals", "The House of the Rising Sun")
-        self.song4 = Song("Lou Reed", "Vicious")
-        self.song5 = Song("Iron Maiden", "The Number of the Beast")
-        self.song6 = Song("Johnny Cash", "A Boy Named Sue")
+        self.song1 = Song("Boyzone", "No Matter What", "Pop")
+        self.song2 = Song("Ed Sheeran", "I See Fire", "Pop")
+        self.song3 = Song("The Animals", "House of the Rising Sun", "Blues and Soul")
+        self.song4 = Song("Lou Reed", "Vicious", "Rock")
+        self.song5 = Song("Iron Maiden", "The Number of the Beast", "Metal")
+        self.song6 = Song("Johnny Cash", "A Boy Named Sue", "Country")
 
         self.rooms = []
         self.rooms.extend([self.room1, self.room2, self.room3, self.room4, self.room5, self.room6])
@@ -26,7 +26,7 @@ class TestKaraokeBar(unittest.TestCase):
         self.songs = []
         self.songs.extend([self.song1, self.song2, self.song3, self.song4, self.song5, self.song6])
 
-        self.karaoke_bar = KaraokeBar("Kode to Joy", 1000, self.songs, self.rooms)
+        self.karaoke_bar = KaraokeBar("Kode to Joy", 1000, self.songs, self.rooms, 40)
 
     def test_karaoke_bar_has_name(self):
         self.assertEqual("Kode to Joy", self.karaoke_bar.name) 
@@ -65,7 +65,7 @@ class TestKaraokeBar(unittest.TestCase):
         self.assertEqual("I See Fire", self.karaoke_bar.songs[1].title)
 
     def test_karaoke_bar_song_three_house_of_rising_sun(self):
-        self.assertEqual("The House of the Rising Sun", self.karaoke_bar.songs[2].title)
+        self.assertEqual("House of the Rising Sun", self.karaoke_bar.songs[2].title)
 
     def test_karaoke_bar_song_four_vicious(self):
         self.assertEqual("Vicious", self.karaoke_bar.songs[3].title)

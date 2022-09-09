@@ -1,73 +1,73 @@
 import unittest
 from src.guest import Guest
+from src.guest_group import GuestGroup
+from src.karaoke_bar import KaraokeBar
+from src.songs import Song
+from src.room import Room
 
 class TestGuest(unittest.TestCase):
 
     def setUp(self):
-        self.guest1 = Guest(50, "Pop", "I See Fire")
-        self.guest2 = Guest(50, "Pop", "I See Fire")
-        self.guest3 = Guest(50, "Pop", "Girls Just Wanna Have Fun")
-        self.guest4 = Guest(50, "Pop", "The Locomotion")
-        self.guest5 = Guest(50, "Pop", "Four Minutes")
-        self.guest6 = Guest(100, "Pop", "I Want It That Way")
-        self.guest7 = Guest(100, "Pop", "It's Raining Men")
-        self.guest8 = Guest(100, "Pop", "We Are Family")
-        self.guest9 = Guest(100, "Pop", "Proud Mary")
-        self.guest10 = Guest(100, "Pop", "Millenium")
+        self.guest1 = Guest(10, "Pop", "I See Fire")
+        self.guest2 = Guest(10, "Rock", "Everlong")
+        self.guest3 = Guest(50, "Blues and Soul", "House of the Rising Sun")
+        self.guest4 = Guest(50, "Rock", "Vicious")
+        self.guest5 = Guest(50, "Metal", "The Number of the Beast")
+        self.guest6 = Guest(50, "Country", "A Boy Named Sue")
+        self.guest7 = Guest(100, "Rock", "Ever Fallen in Love(With Someone You Shouldn't've)")
+        self.guest8 = Guest(100, "Pop", "Umbrella")
+        self.guest9 = Guest(50, "Metal", "Run to the Hills")
+        self.guest10 = Guest(200, "Country", "Bolsarino")
 
-        self.guest11 = Guest(100, "Pop", "No Matter What")
-        self.guest12 = Guest(100, "Pop", "No Matter What")
-        self.guest13 = Guest(100, "Pop", "Crazy Little Thing Called Love")
-        self.guest14 = Guest(100, "Pop", "House of the Rising Sun")
-        self.guest15 = Guest(100, "Pop", "The Number of the Beast")
-        self.guest16 = Guest(200, "Pop", "Somebody to Love")
-        self.guest17 = Guest(200, "Pop", "Like a Virgin")
-        self.guest18 = Guest(200, "Pop", "Love Me Do")
-        self.guest19 = Guest(200, "Pop", "Hey Jude")
-        self.guest20 = Guest(200, "Pop", "Gin and Juice")
+        self.room1 = Room("Joyzone", 6, "Pop", False)
+        self.room2 = Room("Code Sheeran", 8, "Pop", True)
+        self.room3 = Room("House of the 0 and 1", 5, "Blues and Soul", False)
+        self.room4 = Room("Loop Reed", 8, "Rock", True)
+        self.room5 = Room("The Integer of the Beast", 4, "Metal", False)
+        self.room6 = Room("Johnny Crash", 6, "Country", False)
 
-        self.guest21 = Guest(100, "Blues and Soul", "House of the Rising Sun")
-        self.guest22 = Guest(100, "Blues and Soul", "House of the Rising Sun")
-        self.guest23 = Guest(100, "Blues and Soul", "Crazy Little Thing Called Love")
-        self.guest24 = Guest(100, "Blues and Soul", "House of the Rising Sun")
-        self.guest25 = Guest(100, "Blues and Soul", "Roadrunner")
-        self.guest26 = Guest(300, "Blues and Soul", "Bright Lights, Big City")
-        self.guest27 = Guest(300, "Blues and Soul", "Birthday")
-        self.guest28 = Guest(300, "Blues and Soul", "Happiness is a Warm Gun")
-        self.guest29 = Guest(300, "Blues and Soul", "Lonely Boy")
-        self.guest30 = Guest(300, "Blues and Soul", "Mannish Boy")
+        self.song1 = Song("Boyzone", "No Matter What", "Pop")
+        self.song2 = Song("Ed Sheeran", "I See Fire", "Pop")
+        self.song3 = Song("The Animals", "House of the Rising Sun", "Blues and Soul")
+        self.song4 = Song("Lou Reed", "Vicious", "Rock")
+        self.song5 = Song("Iron Maiden", "The Number of the Beast", "Metal")
+        self.song6 = Song("Johnny Cash", "A Boy Named Sue", "Country")
 
-        self.guest31 = Guest(50, "Rock", "Vicious")
-        self.guest32 = Guest(50, "Rock", "Vicious")
-        self.guest33 = Guest(50, "Rock", "Vicious")
-        self.guest34 = Guest(50, "Rock", "Burnout")
-        self.guest35 = Guest(50, "Rock", "When I Come Around")
-        self.guest36 = Guest(100, "Rock", "Welcome to Paradise")
-        self.guest37 = Guest(100, "Rock", "T.N.T.")
-        self.guest38 = Guest(100, "Rock", "Thunder")
-        self.guest39 = Guest(100, "Rock", "Back in Black")
-        self.guest40 = Guest(100, "Rock", "Paradise by the Dashboard Light")
+        self.rooms = []
+        self.rooms.extend([self.room1, self.room2, self.room3, self.room4, self.room5, self.room6])
 
-        self.guest41 = Guest(100, "Metal", "The Number of the Beast")
-        self.guest42 = Guest(100, "Metal", "The Number of the Beast")
-        self.guest43 = Guest(100, "Metal", "Helter Skelter")
-        self.guest44 = Guest(100, "Metal", "Tame")
-        self.guest45 = Guest(100, "Metal", "Wave of Mutilation")
-        self.guest46 = Guest(200, "Metal", "This Monkey's Going to Heaven")
-        self.guest47 = Guest(200, "Metal", "Duality")
-        self.guest48 = Guest(200, "Metal", "Run to the Hills")
-        self.guest49 = Guest(200, "Metal", "Paranoid")
-        self.guest50 = Guest(200, "Metal", "War Pigs")
+        self.songs = []
+        self.songs.extend([self.song1, self.song2, self.song3, self.song4, self.song5, self.song6])
 
-        self.guest51 = Guest(100, "Country", "A Boy Named Sue")
-        self.guest52 = Guest(100, "Country", "A Boy Named Sue")
-        self.guest53 = Guest(100, "Country", "If I Were a Carpenter")
-        self.guest54 = Guest(100, "Country", "House of the Rising Sun")
-        self.guest55 = Guest(100, "Country", "The Number of the Beast")
-        self.guest56 = Guest(200, "Country", "Sixteen Tons")
-        self.guest57 = Guest(200, "Country", "No Matter What")
-        self.guest58 = Guest(200, "Country", "Blue Train")
-        self.guest59 = Guest(200, "Country", "The Day Fingerpickers Took Over the World")
-        self.guest60 = Guest(200, "Country", "Bolsarino")
+        self.karaoke_bar = KaraokeBar("Kode to Joy", 1000, self.songs, self.rooms, 40)
+        
 
+    def test_guest_has_cash(self):
+        self.assertEqual(200, self.guest10.cash)
+
+    def test_guest_has_fav_genre(self):
+        self.assertEqual("Country", self.guest10.fav_genre)
+
+    def test_guest_has_fav_song(self):
+        self.assertEqual("Bolsarino", self.guest10.fav_song)
+
+    def test_guest_can_join_group(self):
+        self.guest_group = GuestGroup(0)
+        self.guest10.join_group(self.guest_group)
+        self.assertEqual(1, self.guest_group.total_guests)
+
+    def test_guest_enter_karaoke_has_money(self):
+        self.guest10.enter_karaoke(self.karaoke_bar)
+        self.assertEqual(160, self.guest10.cash)
+        self.assertEqual(1040, self.karaoke_bar.till)
+
+    def test_guest_enter_karaoke_not_money(self):
+        self.guest1.enter_karaoke(self.karaoke_bar)
+        self.assertEqual(10, self.guest1.cash)
+        self.assertEqual(1000, self.karaoke_bar.till)
+
+    # def test_guest_favourite_song_play(self):
+    #     self.is_correct = 0
+    #     self.guest31.play_fav_song(self.karaoke_bar.songs[3], self.is_correct)
+    #     self.assertEqual(1, self.is_correct)
     
