@@ -1,5 +1,6 @@
 import unittest
 from src.room import Room
+from src.guest_group import GuestGroup
 
 class TestRoom(unittest.TestCase):
 
@@ -11,6 +12,9 @@ class TestRoom(unittest.TestCase):
         self.room4 = Room("Loop Reed", 8, "Rock", True)
         self.room5 = Room("The Integer of the Beast", 4, "Metal", False)
         self.room6 = Room("Johnny Crash", 6, "Country", False)
+
+        self.guest_group_too_big = GuestGroup(10)
+        self.guest_group_ok = GuestGroup(4)
 
     def test_room_one_has_name_joyzone(self):
         self.assertEqual("Joyzone", self.room1.name)
@@ -29,3 +33,7 @@ class TestRoom(unittest.TestCase):
 
     def test_room_six_has_name_johnny_crash(self):
         self.assertEqual("Johnny Crash", self.room6.name)
+
+    def test_room_accepts_group(self):
+        self.guest_group_too_big.enter_room(self.room1.capacity)
+        self.assertEqual(False, )

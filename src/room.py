@@ -4,3 +4,5 @@ class Room:
         self.capacity = capacity
         self.style = style
         self.fee = fee
+
+    

@@ -66,8 +66,7 @@ class TestGuest(unittest.TestCase):
         self.assertEqual(10, self.guest1.cash)
         self.assertEqual(1000, self.karaoke_bar.till)
 
-    # def test_guest_favourite_song_play(self):
-    #     self.is_correct = 0
-    #     self.guest31.play_fav_song(self.karaoke_bar.songs[3], self.is_correct)
-    #     self.assertEqual(1, self.is_correct)
+    def test_guest_favourite_song_play(self):
+        self.guest3.play_fav_song(self.song3)
+        self.assertTrue("Woo hoo!")
     

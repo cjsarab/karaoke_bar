@@ -13,9 +13,7 @@ class Guest:
             self.cash -= karaoke_bar.entry_fee
             karaoke_bar.till += karaoke_bar.entry_fee
 
-    # def play_fav_song(self, karaoke_song, is_correct):
-    #     if karaoke_song == self.fav_song:
-    #         print("Woo hoo!")
-    #         is_correct += 1
-    #     return is_correct
+    def play_fav_song(self, karaoke_song):
+        if karaoke_song == self.fav_song:
+            print("Woo hoo!")
 
